@@ -17,7 +17,7 @@ class NewExpense extends StatefulWidget {
 
 class _NewStateClass extends State<NewExpense> {
   var _titleControler = TextEditingController();
-  String? _titleError;
+  
   var _amountControler = TextEditingController();
   String? _selectedDate;
   var _dateTime = DateTime.now();

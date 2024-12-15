@@ -13,6 +13,14 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
+  final List<Expense> _expensesList = [
+    Expense(
+        title: 'Cinema',
+        amount: 45.0,
+        date: DateTime.now(),
+        category: ExpenseCategory.Travel)
+  ];
+
   void newExpenseToAdd(Expense expense) {
     setState(() {
       _expensesList.add(expense);
@@ -33,7 +41,7 @@ class _ExpensesState extends State<Expenses> {
     });
 
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       action: SnackBarAction(
           label: 'Undo',
           onPressed: () {
@@ -44,8 +52,6 @@ class _ExpensesState extends State<Expenses> {
       content: const Text('Expense Removed!'),
     ));
   }
-
-  final List<Expense> _expensesList = List.empty();
 
   @override
   Widget build(BuildContext context) {
